@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyJams</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <% if current_user %>
+        <span class="mdl-layout-title"><%= current_user.username %></span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+         <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <%= link_to "Logout", logout_path, method: :delete %>
+        </nav>
+      <% else %>
+          <span class="mdl-layout-title"><%= link_to "Create User", new_user_path %></span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <%= link_to "Login", login_path %>
+          </nav>
+     <% end %>
+    </div>
+  </header>
+<div id="newest_song">
+  <strong>Newest song:</strong> <%= session[:most_recent_song_title] %>
+</div>
+<% flash.each do |type, msg| %>
+    <%= content_tag  :div, msg, class: "flash_#{type}"%>
+<% end %>
+<%= yield %>
+</body>
+</html>

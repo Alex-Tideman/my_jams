@@ -1,0 +1,6 @@
+<h1 id="show_song_title"><%= @song.title %></h1>
+<h3><%= @song.artist %></h3>
+
+<h6><%= link_to "Edit song", edit_song_path(@song) %></h6>
+<h6><%= link_to "Delete song", song_path(@song), method: :delete %></h6>
+<h6><%= link_to "Back to Song List", songs_path %></h6>

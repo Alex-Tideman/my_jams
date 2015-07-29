@@ -1,0 +1,43 @@
+
+body {
+  background: #2e81ff;
+}
+
+#my_jams {
+  margin-top: 5%;
+  margin-left: 38%;
+}
+
+#create_song {
+  margin-top: -3%;
+  margin-left: 41%;
+}
+
+#newest_song {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background: black;
+  color: yellow;
+  text-align:center;
+}
+
+#song_link a:link {
+  color: black;
+}
+
+.mdl-card__media {
+  text-align: center;
+}
+
+.mdl-button--raised.mdl-button--colored {
+  background: #000000 none repeat scroll 0% 0%;
+}
+
+.mdl-layout__header {
+  background-color: yellow;
+}
+
+
+// Place all the styles related to the songs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
